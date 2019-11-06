@@ -9,9 +9,13 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.0",
     "nodemon": "^1.19.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sequelize": "^5.21.2"
+  },
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"

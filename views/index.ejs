@@ -1,30 +1,31 @@
-<% include _header%>
-<%include _navbar.ejs%>
+<% include _header %>
+<% include _navbar.ejs %>
 <div class="container">
-<table>
-    <thead>
-    <tr>
-        <th>Book</th>
-        <th>Author</th>
-        <th>Library</th>
-        <th>Status</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Harry Potter and the philosopher's stone</td>
-        <td>J. K. Rowling</td>
-        <td>Hrodno central library</td>
-        <td>In Library</td>
-    </tr>
-    <tr>
-        <td>The Hobbit</td>
-        <td>J.R.R.Tolkien</td>
-        <td>Minsk central library</td>
-        <td>In use</td>
-    </tr>
-    </tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Library</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% booklist.forEach(function (book) { %>
+            <tr>
+                <td onclick="document.location='/index'"><%= book.name %></td>
+                <td><%= book.author %></td>
+                <td onclick="document.location='/library'"><%= book.library_id %></td>
+                <td><%= book.status %></td>
+            </tr>
+        <% }) %>
+        <!--    <tr>-->
+        <!--        <td>The Hobbit</td>-->
+        <!--        <td>J.R.R.Tolkien</td>-->
+        <!--        <td>Minsk central library</td>-->
+        <!--        <td>In use</td>-->
+        <!--    </tr>-->
+        </tbody>
+    </table>
 </div>
-<%include _footer%>
+<% include _footer %>

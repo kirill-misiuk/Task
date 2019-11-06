@@ -11,6 +11,7 @@ app.use(cookieParser());
 app.set('view engine','ejs');
 
 require('./app/routes/index.js')(app);
+require('./config/sequelize');
 try {
 app.listen(PORT,()=>{
     console.log('server has been started')
