@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser= require('cookie-parser');
@@ -8,15 +8,16 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.static('./css'));
 app.set('view engine','ejs');
-
 require('./app/routes/index.js')(app);
-require('./config/sequelize');
+require('./app/routes/addbook.js')(app);
+
 try {
 app.listen(PORT,()=>{
     console.log('server has been started')
 })
-}catch (e) {
-    console.log(e)
+}catch (err) {
+    console.log(err)
 }
 
