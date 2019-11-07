@@ -1,4 +1,4 @@
-const {Book, Library} = require('../../config/sequelize');
+const {Library} = require('../../config/sequelize');
 const addLibraryList = () => Library.findAll({raw: true});
 
 function showLibrariesPage(req, res) {

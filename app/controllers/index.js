@@ -10,10 +10,10 @@ function showIndexPage(req, res) {
         .then(() => res.render('index', {
             booklist: booklist,
             library: library,
-            us:req.user
+            user: req.user
         })).catch((err) => {
         console.log(err)
-        })
+    })
 
 }
 

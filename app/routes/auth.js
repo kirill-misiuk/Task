@@ -1,4 +1,4 @@
-const { showLoginPage, showSignupPage, processLogin,addLocation} = require('../controllers/auth');
+const {showLoginPage, showSignupPage, processLogin, addLocation} = require('../controllers/auth');
 
 module.exports = function (app, passport) {
 
@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
         }),
         processLogin);
     app.get('/signup', showSignupPage);
-    app.post('/signup',passport.authenticate('local-signup', {
+    app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/',
         failureRedirect: '/signup',
         failureFlash: true
