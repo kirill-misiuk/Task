@@ -38,15 +38,15 @@ module.exports = function (passport) {
                         let newUserMysql = {
                             name: username,
                             password: bcrypt.hashSync(password, null, null),
-                            location:'location',
-                            createdAt:new Date().toISOString().slice(0, 19).replace('T', ' '),
-                            updatedAt:new Date().toISOString().slice(0, 19).replace('T', ' ')
+                            location: 'location',
+                            createdAt: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                            updatedAt: new Date().toISOString().slice(0, 19).replace('T', ' ')
                             // use the generateHash function in our user model
                         };
 
                         let insertQuery = "INSERT INTO libraries ( name, password, location,createdAt,updatedAt ) values (?,?,?,?,?)";
 
-                        connection.query(insertQuery, [newUserMysql.name, newUserMysql.password,newUserMysql.location,newUserMysql.createdAt,newUserMysql.updatedAt], function (err, rows) {
+                        connection.query(insertQuery, [newUserMysql.name, newUserMysql.password, newUserMysql.location, newUserMysql.createdAt, newUserMysql.updatedAt], function (err, rows) {
                             console.log(err);
                             console.log(rows);
                             newUserMysql.id = rows.insertId;
