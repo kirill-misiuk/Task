@@ -1,5 +1,5 @@
-const {showAddBookPage,sendBookData} = require('../controllers/addbook')
+const {showAddBookPage,sendBookData,isLoggedIn} = require('../controllers/addbook')
 module.exports = function (app) {
-    app.get('/addbook',showAddBookPage);
+    app.get('/addbook',isLoggedIn,showAddBookPage);
     app.post('/addbook',sendBookData)
 };

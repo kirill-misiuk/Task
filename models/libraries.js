@@ -8,7 +8,13 @@ module.exports = (sequelize, type) => {
         },
         name: {
             type: type.STRING,
+            unique:true,
             allowNull: false
+        },
+        password: {
+            type: type.CHAR,
+            allowNull: false
+
         },
         location: {
             type: type.Sequelize.TEXT,

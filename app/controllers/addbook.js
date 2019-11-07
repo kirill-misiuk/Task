@@ -1,10 +1,14 @@
 const {Book, Library} = require('../../config/sequelize');
-
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
 function sendBookData(req,res){
     Book.create({
         name:req.body.name,
         author:req.body.author,
-        library_id:1,
+        library_id:req.user.id,
         page_count:234,
         year:req.body.year,
         status:1,
@@ -18,4 +22,4 @@ function sendBookData(req,res){
 function showAddBookPage(req,res) {
     res.render('addbook')
 }
-module.exports={showAddBookPage,sendBookData};
+module.exports={showAddBookPage,sendBookData,isLoggedIn};
