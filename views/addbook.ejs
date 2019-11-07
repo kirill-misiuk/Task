@@ -1,36 +1,47 @@
 <% include _header.ejs %>
-<%include _navbar.ejs%>
+<% include _navbar.ejs %>
 <div class="c">
+    <form method="post" class="col s12">
         <div class="row">
-            <form method="post" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Book Name</label>
-                    </div>
-                </div>
-            </form>
+            <div class="input-field col s12">
+                <textarea id="name" name="name" class="materialize-textarea"></textarea>
+                <label for="textarea1">Book Name</label>
+            </div>
         </div>
         <div class="row">
-            <form  method="post" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Author</label>
-                    </div>
-                </div>
-            </form>
+            <div class="input-field col s12">
+                <textarea id="author" name="author" class="materialize-textarea"></textarea>
+                <label for="textarea1">Author</label>
+            </div>
         </div>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Year</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-</div>
 
+        <div class="row">
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected></option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="year" type="number" min="1900" max="2100" onKeyDown="limitText(this,4)">
+                <label for="textarea1">YYYY</label>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function limitText(limitField, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                }
+            }
+        </script>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
 <% include _footer.ejs %>

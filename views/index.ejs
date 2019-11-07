@@ -15,11 +15,14 @@
             <tr>
                 <td onclick="document.location='/index'"><%= book.name %></td>
                 <td><%= book.author %></td>
-                <td onclick="document.location='/library'"><%= library[book.library_id-1].name%></td>
-                <% if(book.status==1){%><td>In Library</td><%}else{%><td>In Use</td><%}%>
+                <td onclick="document.location='/library'"><%= library[book.library_id - 1].name %></td>
+                <% if(book.status == 1){ %>
+                    <td>In Library</td>
+                <% }else{ %>
+                    <td>In Use</td>
+                <% } %>
             </tr>
         <% }) %>
-
 
         </tbody>
     </table>

@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser= require('cookie-parser');
@@ -12,6 +12,7 @@ app.use(express.static('./css'));
 app.set('view engine','ejs');
 require('./app/routes/index.js')(app);
 require('./app/routes/addbook.js')(app);
+require('./app/routes/libraries')(app);
 
 try {
 app.listen(PORT,()=>{

@@ -1,0 +1,22 @@
+<% include _header %>
+<% include _navbar.ejs %>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Library</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% libArr.forEach(function (library) { %>
+            <tr>
+                <td onclick="document.location='/index'"><%= library.name %></td>
+                <td><%= library.location %></td>
+            </tr>
+        <% }) %>
+
+        </tbody>
+    </table>
+</div>
+<% include _footer %>

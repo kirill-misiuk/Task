@@ -18,6 +18,10 @@ module.exports = (sequelize, type) => {
             type: type.INTEGER,
             allowNull: false
         },
+        year: {
+            type: type.INTEGER,
+            allowNull: false
+        },
         library_id: {
             type: type.INTEGER,
             allowNull: false
