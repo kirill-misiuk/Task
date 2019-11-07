@@ -1,5 +1,9 @@
 <% include _header %>
-<% include _navbar_guest.ejs %>
+<% if(user === undefined){ %>
+    <% include _navbar_guest.ejs %>
+<% }else{ %>
+    <% include _navbar_auth.ejs %>
+<% } %>
 <div class="container">
     <table>
         <thead>

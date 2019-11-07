@@ -23,7 +23,9 @@ function sendBookData(req, res) {
 }
 
 function showAddBookPage(req, res) {
-    res.render('addbook')
+    res.render('addbook',{
+        user:req.user
+    })
 }
 
 module.exports = {showAddBookPage, sendBookData, isLoggedIn};

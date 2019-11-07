@@ -10,6 +10,7 @@
         <tr>
             <th>Book</th>
             <th>Author</th>
+            <th>Date</th>
             <th>Library</th>
             <th>Status</th>
         </tr>
@@ -19,6 +20,7 @@
             <tr>
                 <td onclick="document.location='/index'"><%= book.name %></td>
                 <td><%= book.author %></td>
+                <td><%= book.year%></td>
                 <td onclick="document.location='/library'"><%= library[book.library_id - 1].name %></td>
                 <% if(book.status == 1){ %>
                     <td>In Library</td>

@@ -6,7 +6,8 @@ function showLibrariesPage(req, res) {
     return (addLibraryList()
             .then(result => libArr = result)
             .then(() => res.render('libraries', {
-                libArr: libArr
+                libArr: libArr,
+                user: req.user
             })).catch((err) => {
                 console.log(err)
             })
