@@ -27,6 +27,8 @@ require('./app/routes/index.js')(app);
 require('./app/routes/addbook.js')(app,passport);
 require('./app/routes/libraries')(app);
 require('./app/routes/auth.js')(app, passport);
+require('./app/routes/book')(app);
+require('./app/routes/lib_booklist')(app,passport);
 try {
 app.listen(PORT,()=>{
     console.log('server has been started')

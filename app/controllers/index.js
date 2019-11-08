@@ -1,6 +1,7 @@
 const {Book, Library} = require('../../config/sequelize');
 const addBookList = () => Book.findAll({raw: true});
 const addLibraryList = () => Library.findAll({raw: true});
+
 function showIndexPage(req, res) {
     let booklist, library;
     addBookList().then(result => booklist = result)
@@ -12,8 +13,9 @@ function showIndexPage(req, res) {
             user: req.user
         })).catch((err) => {
         console.log(err)
-    })
-
+    });
 }
+
+
 
 module.exports = {showIndexPage};

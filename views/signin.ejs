@@ -1,7 +1,7 @@
 <% include _header.ejs %>
 <% include _navbar_guest.ejs %>
 <div class="section"></div>
-<form method="post">
+<div>
     <div style="text-align: center;">
         <h5 class="pink-text">Please, login into your account</h5>
         <div class="section"></div>
@@ -36,7 +36,7 @@
                     <div style="text-align: center;">
                         <div class='row'>
                             <button type='submit' name='btn_login'
-                                    class='col s12 btn btn-large waves-effect pink lighten-2'>Login
+                                    class='col s12 btn btn-large waves-effect red accent-1'>Login
                             </button>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
         </div>
         <a href="/signup">Create account</a>
     </div>
-</form>
+</div>
 <% if (message.length > 0) { %>
     <div class="card-panel teal lighten-2"><%= message %></div>
 <% } %>

@@ -1,5 +1,4 @@
 const LocalStrategy = require('passport-local').Strategy;
-
 const mysql = require('mysql');
 const bcrypt = require('bcrypt-nodejs');
 const dbconfig = require('../config/passportDB');
@@ -38,7 +37,7 @@ module.exports = function (passport) {
                         let newUserMysql = {
                             name: username,
                             password: bcrypt.hashSync(password, null, null),
-                            location: 'location',
+                            location: req.body.location,
                             createdAt: new Date().toISOString().slice(0, 19).replace('T', ' '),
                             updatedAt: new Date().toISOString().slice(0, 19).replace('T', ' ')
                             // use the generateHash function in our user model

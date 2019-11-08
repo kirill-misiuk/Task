@@ -1,22 +1,17 @@
-const {Library} = require('../../config/sequelize');
 
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return  res.redirect('/');
+   next();
+}
 function showLoginPage(req, res) {
-    const fom = "Signin";
-    const post = "signin";
-    res.render('signin.ejs', {message: req.flash('loginMessage'), fom: fom, post: post});
+    res.render('signin.ejs', {message: req.flash('loginMessage')});
 }
 
 function showSignupPage(req, res) {
-    const fom = "Signup";
-    const post = "signup";
-    res.render('signup.ejs', {message: req.flash('signupMessage'), fom: fom, post: post});
+    res.render('signup.ejs', {message: req.flash('signupMessage')});
 }
 
-function addLocation(req, res) {
-    Library.create({
-        location: 'Minsk'
-    })
-}
 
 function processLogin(req, res) {
     if (req.body.remember) {
@@ -31,5 +26,5 @@ module.exports = {
     showLoginPage,
     showSignupPage,
     processLogin,
-    addLocation
+    isLoggedIn,
 };

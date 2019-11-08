@@ -11,7 +11,7 @@ function sendBookData(req, res) {
         name: req.body.name,
         author: req.body.author,
         library_id: req.user.id,
-        page_count: 234,
+        page_count: req.body.page_count,
         year: req.body.year,
         status: 1,
         createdAt: Date(),

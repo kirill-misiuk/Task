@@ -1,9 +1,5 @@
 <% include _header %>
-<% if(user === undefined){ %>
-    <% include _navbar_guest.ejs %>
-<% }else{ %>
-    <% include _navbar_auth.ejs %>
-<% } %>
+<% include _navbar_auth.ejs %>
 <div class="container">
     <table class="highlight">
         <thead>
@@ -28,7 +24,9 @@
                 <td>
                     <p>
                         <label>
-                            <input type="checkbox" disabled="disabled" <%= book.status ? "checked " : "" %> />
+                            <input id="createSS" onclick="document.location='/booklist/<%= book.id %>'"
+                                   type="checkbox" <%= book.status ?
+                                    "checked " : "" %> />
                             <span><%= book.status ? "In Use":"In Library" %></span>
                         </label>
                     </p>
