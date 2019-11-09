@@ -13,7 +13,7 @@ function sendBookData(req, res) {
         library_id: req.user.id,
         page_count: req.body.page_count,
         year: req.body.year,
-        status: 1,
+        status: 0,
         createdAt: Date(),
         updatedAt: Date()
     }).then(() => res.redirect('/'))

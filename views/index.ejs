@@ -10,8 +10,6 @@
         <tr>
             <th>Book</th>
             <th>Author</th>
-            <th>Date</th>
-            <th>Page count</th>
             <th>Library</th>
             <th>Status</th>
             <th></th>
@@ -19,12 +17,12 @@
         </thead>
         <tbody>
         <% booklist.forEach(function (book) { %>
-            <tr>
-                <td onclick="document.location='/index'"><%= book.name %></td>
+            <tr onclick="document.location='/book/<%= book.name%>'">
+                <td><%= book.name %></td>
                 <td><%= book.author %></td>
-                <td><%= book.year %></td>
-                <td><%= book.page_count %></td>
-                <td onclick="document.location='/library'"><%= library[book.library_id - 1].name %></td>
+<!--                <td><%= book.year %></td>-->
+<!--                <td><%= book.page_count %></td>-->
+                <td ><%= library[book.library_id - 1].name %></td>
                 <td>
                     <p>
                         <label>

@@ -1,11 +1,12 @@
 const express = require("express");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser= require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
+const createError = require('http-errors');
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -36,4 +37,14 @@ app.listen(PORT,()=>{
 }catch (err) {
     console.log(err)
 }
+app.use(function(req, res, next) {
+    next(createError(404));
+});
+app.use(function(err, req, res, next) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.status(err.status || 500);
+    res.render('error');
+});
+
 

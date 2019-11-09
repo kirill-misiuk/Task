@@ -1,5 +1,25 @@
-<% include _header%>
-<%include _navbar_guest.ejs%>
-
-
-<%include _footer%>
+<% include _header %>
+<% include _navbar_guest.ejs %>
+<div class="c">
+    <h5 class="center-align">About book</h5>
+    <div class="section">
+        <h5>Name:</h5>
+        <p><%= book.name %></p>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+        <h5>Author:</h5>
+        <p><%= book.author %></p>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+        <h5>Page count:</h5>
+        <p><%= book.page_count %></p>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+        <h5>Address:</h5>
+        <p><%= library.location %>,<%=library.name%></p>
+    </div>
+</div>
+<% include _footer %>
