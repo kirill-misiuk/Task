@@ -1,9 +1,9 @@
 module.exports = {
     'connection': {
-        'host': 'remotemysql.com',
-        'user': 'YKx3mQnch7',
-        'password': 'CnMmeWQhET'
+        'host': 'bofsd7plrbhrvba1cobh-mysql.services.clever-cloud.com',
+        'user': 'udl5boqszgimeawr',
+        'password': 'fbgSmoTWoUhGyNK5txe2'
     },
-    'database': 'YKx3mQnch7',
+    'database': 'bofsd7plrbhrvba1cobh',
     'users_table': 'libraries'
 };
