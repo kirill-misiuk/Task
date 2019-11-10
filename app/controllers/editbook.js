@@ -2,10 +2,9 @@ const {Book} = require('../../config/sequelize');
 const addBook=(req)=>Book.findOne({raw:true,where:{id:req.params.id}});
 
 function editBookData(req, res) {
-Book.update({
+ return Book.update({
     name: req.body.name,
     author: req.body.author,
-    library_id: req.user.id,
     page_count: req.body.page_count,
     year: req.body.year,
     updatedAt: Date()},

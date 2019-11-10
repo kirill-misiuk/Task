@@ -34,14 +34,15 @@
                 }
             }
        </script>
+        <form action="/editbook/<%= book.id%>" method="post" >
+            <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Edit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </form>
 
-    </form>
-    <form action="/editbook/<%= book.id%>" method="post" style="display: inline-block">
-        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Edit
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
     <form action="/cancel" method="post" style="display: inline-block">
+        <h1></h1>
         <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Cancel
             <i class="material-icons right">cancel</i>
         </button>

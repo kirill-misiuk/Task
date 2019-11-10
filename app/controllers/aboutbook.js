@@ -10,6 +10,7 @@ function showBookPage(req,res) {
        .then(result=>library=result)
        .then(()=> res.render('aboutbook',{
           book:book,
+           user:req.user,
           library:library
        }))
 
