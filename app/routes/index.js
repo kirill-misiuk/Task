@@ -1,5 +1,4 @@
-const {showIndexPage,changeBookStatus} = require('../controllers/index');
+const {showMainPage} = require('../controllers/main');
 module.exports = function (app) {
-    app.get('/index', showIndexPage);
-    // app.get('/:id',changeBookStatus)
+    app.get('/', showMainPage);
 };

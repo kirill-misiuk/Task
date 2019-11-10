@@ -9,7 +9,7 @@ function showBookListPage(req, res) {
     addLibraryBookList(req).then(result => booklist = result)
         .then(() => addLibraryList())
         .then(result => library = result)
-        .then(() => res.render('lib_booklist', {
+        .then(() => res.render('libbooklist', {
             booklist: booklist,
             library: library,
             user: req.user
@@ -27,7 +27,7 @@ function changeBookStatus(req, res) {
                 return Book.update({status}, {where: {id}});
             }
         })
-        .then(() => res.redirect('/booklist'));
+        .then(() => res.redirect('/libbooklist'));
 }
 
 module.exports = {showBookListPage, changeBookStatus};

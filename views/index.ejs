@@ -2,39 +2,21 @@
 <% if(user === undefined){ %>
     <% include _navbar_guest.ejs %>
 <% }else{ %>
-    <% include _navbar_auth.ejs %>
-<% } %>
-<div class="container">
-    <table class="highlight">
-        <thead>
-        <tr>
-            <th>Book</th>
-            <th>Author</th>
-            <th>Library</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <% booklist.forEach(function (book) { %>
-            <tr onclick="document.location='/book/<%= book.id%>'">
-                <td><%= book.name %></td>
-                <td><%= book.author %></td>
-<!--                <td><%= book.year %></td>-->
-<!--                <td><%= book.page_count %></td>-->
-                <td ><%= library[book.library_id - 1].name %></td>
-                <td>
-                    <p>
-                        <label>
-                            <input type="checkbox" disabled="disabled" <%= book.status ? "checked " : "" %> />
-                            <span><%= book.status ? "In Use":"In Library" %></span>
-                        </label>
-                    </p>
-                </td>
-            </tr>
-        <% }) %>
-        </tbody>
-    </table>
+<% include _navbar_auth.ejs %>
+<%}%>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center pink-text">Application for libraries</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">A modern responsive web-application for libraries</h5>
+        </div>
+        <div class="row center">
+            <a href="/all_booklist" id="download-button" class="btn-large waves-effect waves-light  red accent-1">Get Started</a>
+        </div>
+        <br><br>
+
+    </div>
 </div>
 
-<% include _footer %>
+<%include _footer.ejs%>

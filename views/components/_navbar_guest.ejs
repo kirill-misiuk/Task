@@ -5,14 +5,18 @@
 <nav>
     <div class="nav-wrapper">
         <a class="brand-logo">Library</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
             <li><a href="/">Books</a></li>
             <li><a href="/libraries">Libraries</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Auth<i class="material-icons right">arrow_drop_down</i></a>
             </li>
         </ul>
-        </ul>
     </div>
-
 </nav>
-
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/allbooklist">Books</a></li>
+    <li><a href="/libraries">Libraries</a></li>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Auth<i class="material-icons right">arrow_drop_down</i></a>
+    </li>
+</ul>
