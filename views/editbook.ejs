@@ -1,0 +1,48 @@
+<% include _header.ejs %>
+<% include _navbar_auth.ejs%>
+<div class="c">
+    <form method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input   id="name" name="name" value="<%=book.name%>" class="materialize-textarea">
+                <label for="textarea1">Book Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="author" name="author" value="<%=book.author%>" class="materialize-textarea">
+                <label for="textarea1">Author</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="page_count" type="number" min="1" max="9000" value="<%=book.page_count%>"  onKeyDown="limitText(this,3)">
+                <label for="textarea1">Page count</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="year" type="number" min="1900" max="2100" value="<%book.year%>" onKeyDown="limitText(this,3)">
+                <label for="textarea1">YYYY</label>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function limitText(limitField, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                }
+            }
+        </script>
+        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Submit
+            <i class="material-icons right">Edit</i>
+        </button>
+        <button class="btn waves-effect waves-light red accent-1" onclick="document.location='/booklist'" name="action">Submit
+            <i class="material-icons right">Cancel</i>
+        </button>
+        <button class="btn waves-effect waves-light red accent-1"  onclick="document.location='/delete/<%=book.id%>'" name="action">Submit
+            <i class="material-icons right">Delete</i>
+        </button>
+    </form>
+</div>
+<% include _footer.ejs %>

@@ -9,7 +9,7 @@
             <th>Date</th>
             <th>Page count</th>
             <th>Library</th>
-            <th>Status</th>
+            <th></th>
             <th></th>
         </tr>
         </thead>
@@ -21,6 +21,7 @@
                 <td><%= book.year %></td>
                 <td><%= book.page_count %></td>
                 <td onclick="document.location='/library'"><%= library[book.library_id - 1].name %></td>
+                <td><i onclick="document.location='/book_edit/:id'" class="material-icons">edit</i></td>
                 <td>
                     <p>
                         <label>
