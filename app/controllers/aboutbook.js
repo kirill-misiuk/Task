@@ -8,7 +8,7 @@ function showBookPage(req,res) {
        .then(()=>
        findLibrary(book.library_id))
        .then(result=>library=result)
-       .then(()=> res.render('book',{
+       .then(()=> res.render('aboutbook',{
           book:book,
           library:library
        }))

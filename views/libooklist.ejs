@@ -1,5 +1,5 @@
-<% include _header %>
-<% include _navbar_auth.ejs %>
+<% include components/_header.ejs %>
+<% include components/_navbar_auth.ejs %>
 <div class="container">
     <table class="highlight">
         <thead>
@@ -21,11 +21,11 @@
                 <td><%= book.year %></td>
                 <td><%= book.page_count %></td>
                 <td onclick="document.location='/library'"><%= library[book.library_id - 1].name %></td>
-                <td><i onclick="document.location='/book_edit/:id'" class="material-icons">edit</i></td>
+                <td><i onclick="document.location='/editbook/<%=book.id%>'" class="material-icons">edit</i></td>
                 <td>
                     <p>
                         <label>
-                            <input id="createSS" onclick="document.location='/booklist/<%= book.id %>'"
+                            <input id="createSS" onclick="document.location='/libooklist/<%= book.id %>'"
                                    type="checkbox" <%= book.status ?
                                     "checked " : "" %> />
                             <span><%= book.status ? "In Use":"In Library" %></span>
@@ -38,4 +38,4 @@
     </table>
 </div>
 
-<% include _footer %>
+<% include components/_footer.ejs %>

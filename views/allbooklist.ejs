@@ -1,8 +1,8 @@
-<% include _header %>
+<% include components/_header.ejs %>
 <% if(user === undefined){ %>
-    <% include _navbar_guest.ejs %>
+    <% include components/_navbar_guest.ejs %>
 <% }else{ %>
-    <% include _navbar_auth.ejs %>
+    <% include components/_navbar_auth.ejs %>
 <% } %>
 <div class="container">
     <table class="highlight">
@@ -20,8 +20,6 @@
             <tr onclick="document.location='/book/<%= book.id%>'">
                 <td><%= book.name %></td>
                 <td><%= book.author %></td>
-<!--                <td><%= book.year %></td>-->
-<!--                <td><%= book.page_count %></td>-->
                 <td ><%= library[book.library_id - 1].name %></td>
                 <td>
                     <p>
@@ -37,4 +35,4 @@
     </table>
 </div>
 
-<% include _footer %>
+<% include components/_footer.ejs %>

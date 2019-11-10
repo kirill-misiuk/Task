@@ -1,11 +1,9 @@
 const {Book} = require('../../config/sequelize');
-
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
     res.redirect('/');
 }
-
 function sendBookData(req, res) {
     Book.create({
         name: req.body.name,

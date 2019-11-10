@@ -1,16 +1,16 @@
-<% include _header.ejs %>
-<% include _navbar_auth.ejs%>
+<% include components/_header.ejs %>
+<% include components/_navbar_auth.ejs%>
 <div class="c">
     <form method="post" class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <input   id="name" name="name" value="<%=book.name%>" class="materialize-textarea">
+                <textarea   id="name" name="name"  class="materialize-textarea"><%=book.name%></textarea>
                 <label for="textarea1">Book Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="author" name="author" value="<%=book.author%>" class="materialize-textarea">
+                <textarea id="author" name="author"  class="materialize-textarea"><%=book.author%></textarea>
                 <label for="textarea1">Author</label>
             </div>
         </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="year" type="number" min="1900" max="2100" value="<%book.year%>" onKeyDown="limitText(this,3)">
+                <input name="year" type="number" min="1900" max="2100" value="<%=book.year%>" onKeyDown="limitText(this,3)">
                 <label for="textarea1">YYYY</label>
             </div>
         </div>
@@ -33,16 +33,23 @@
                     limitField.value = limitField.value.substring(0, limitNum);
                 }
             }
-        </script>
-        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Submit
-            <i class="material-icons right">Edit</i>
+       </script>
+
+    </form>
+    <form action="/editbook/<%= book.id%>" method="post" style="display: inline-block">
+        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Edit
+            <i class="material-icons right">send</i>
         </button>
-        <button class="btn waves-effect waves-light red accent-1" onclick="document.location='/booklist'" name="action">Submit
-            <i class="material-icons right">Cancel</i>
+    </form>
+    <form action="/cancel" method="post" style="display: inline-block">
+        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Cancel
+            <i class="material-icons right">cancel</i>
         </button>
-        <button class="btn waves-effect waves-light red accent-1"  onclick="document.location='/delete/<%=book.id%>'" name="action">Submit
-            <i class="material-icons right">Delete</i>
+    </form>
+    <form action="/delete/<%=book.id%>" method="post" style="display: inline-block">
+        <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Delete
+            <i class="material-icons right">delete</i>
         </button>
     </form>
 </div>
-<% include _footer.ejs %>
+<% include components/_footer.ejs %>

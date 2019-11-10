@@ -1,5 +1,5 @@
 function showMainPage(req,res) {
-    res.render('main',{
+    res.render('index',{
         user:req.user
     })
 }

@@ -7,7 +7,7 @@ function showIndexPage(req, res) {
     addBookList().then(result => booklist = result)
         .then(() => addLibraryList())
         .then(result => library = result)
-        .then(() => res.render('index', {
+        .then(() => res.render('allbooklist', {
             booklist: booklist,
             library: library,
             user: req.user

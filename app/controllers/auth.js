@@ -1,14 +1,14 @@
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
-        return  res.redirect('/');
+        return  res.redirect('/libooklist');
    next();
 }
 function showLoginPage(req, res) {
-    res.render('signin.ejs', {message: req.flash('loginMessage')});
+    res.render('auth/signin.ejs', {message: req.flash('loginMessage')});
 }
 
 function showSignupPage(req, res) {
-    res.render('signup.ejs', {message: req.flash('signupMessage')});
+    res.render('auth/signup.ejs', {message: req.flash('signupMessage')});
 }
 
 

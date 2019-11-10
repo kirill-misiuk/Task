@@ -1,5 +1,8 @@
-const {showAddBookPage, sendBookData, isLoggedIn} = require('../controllers/editbook');
+const {showEditBookPage, editBookData,deleteBook,cancelPage} = require('../controllers/editbook');
+const{isLoggedIn}=require('../controllers/addbook');
 module.exports = function (app) {
-    app.get('/editbook', isLoggedIn, showAddBookPage);
-    app.post('/editbook/:id', sendBookData)
+    app.get('/editbook/:id', isLoggedIn, showEditBookPage);
+    app.post('/editbook/:id', editBookData);
+    app.post('/delete/:id',deleteBook);
+    app.post('/cancel',cancelPage);
 };

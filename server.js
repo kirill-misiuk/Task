@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser= require('cookie-parser');
@@ -24,14 +24,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./app/routes/index.js')(app);
-require('./app/routes/main')(app);
+require('./app/routes/allbooklist.js')(app,passport);
+require('./app/routes')(app,passport);
 require('./js/passport')(passport);
 require('./app/routes/addbook.js')(app,passport);
 require('./app/routes/libraries')(app);
 require('./app/routes/auth.js')(app, passport);
-require('./app/routes/book')(app);
-require('./app/routes/lib_booklist')(app,passport);
+require('./app/routes/aboutbook')(app,passport);
+require('./app/routes/libooklist')(app,passport);
+require('./app/routes/editbook')(app,passport);
 try {
 app.listen(PORT,()=>{
     console.log('server has been started')
