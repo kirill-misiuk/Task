@@ -17,5 +17,4 @@ function showIndexPage(req, res) {
 }
 
 
-
 module.exports = {showIndexPage};

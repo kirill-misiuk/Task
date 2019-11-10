@@ -1,9 +1,9 @@
-<% include  components/_header.ejs %>
+<% include components/_header.ejs %>
 <% if(user === undefined){ %>
     <% include components/_navbar_guest.ejs %>
 <% }else{ %>
     <% include components/_navbar_auth.ejs %>
-<%}%>
+<% } %>
 <div class="c">
     <h5 class="center-align">About book</h5>
     <div class="section">
@@ -23,7 +23,7 @@
     <div class="divider"></div>
     <div class="section">
         <h5>Address:</h5>
-        <p><%= library.location %>,<%=library.name%></p>
+        <p><%= library.location %>,<%= library.name %></p>
     </div>
 </div>
 <% include components/_footer.ejs %>

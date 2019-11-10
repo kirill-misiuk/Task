@@ -1,9 +1,9 @@
-<% include  components/_header.ejs %>
+<% include components/_header.ejs %>
 <% if(user === undefined){ %>
     <% include components/_navbar_guest.ejs %>
 <% }else{ %>
-<% include components/_navbar_auth.ejs %>
-<%}%>
+    <% include components/_navbar_auth.ejs %>
+<% } %>
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
@@ -12,11 +12,12 @@
             <h5 class="header col s12 light">A modern responsive web-application for libraries</h5>
         </div>
         <div class="row center">
-            <a href="/allbooklist" id="download-button" class="btn-large waves-effect waves-light  red accent-1">Get Started</a>
+            <a href="/allbooklist" id="download-button" class="btn-large waves-effect waves-light  red accent-1">Get
+                Started</a>
         </div>
         <br><br>
 
     </div>
 </div>
 
-<%include components/_footer.ejs%>
+<% include components/_footer.ejs %>

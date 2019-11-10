@@ -1,8 +1,9 @@
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
-        return  res.redirect('/libooklist');
-   next();
+        return res.redirect('/libooklist');
+    next();
 }
+
 function showLoginPage(req, res) {
     res.render('auth/signin.ejs', {message: req.flash('loginMessage')});
 }

@@ -17,15 +17,15 @@
         </thead>
         <tbody>
         <% booklist.forEach(function (book) { %>
-            <tr onclick="document.location='/book/<%= book.id%>'">
+            <tr onclick="document.location='/book/<%= book.id %>'">
                 <td><%= book.name %></td>
                 <td><%= book.author %></td>
-                <td ><%= library[book.library_id - 1].name %></td>
+                <td><%= library[book.library_id - 1].name %></td>
                 <td>
                     <p>
                         <label>
                             <input type="checkbox" disabled="disabled" <%= book.status ? "checked " : "" %> />
-                            <span><%= book.status ? "In Use":"In Library" %></span>
+                            <span><%= book.status ? "In Use" : "In Library" %></span>
                         </label>
                     </p>
                 </td>
