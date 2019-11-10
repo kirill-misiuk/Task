@@ -1,4 +1,7 @@
 # Intexsoft_Task
+https://library.cleverapps.io/allbooklist
+Password to all library accounts: qwerty
+
 # ABOUT DATABASES
 I used mysql and sequelize.
 To change  connection options go to config/sequelize.js
