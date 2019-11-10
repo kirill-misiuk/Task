@@ -1,12 +1,7 @@
 const BookModel = require('../models/books');
 const LibraryModel = require('../models/libraries')
 const Sequelize = require('sequelize');
-const reconnectOptions = {
-    max_retries: 999,
-    onRetry: function(count) {
-        console.log("connection lost, trying to reconnect ("+count+")");
-    }
-};
+
 const sequelize = new Sequelize('bofsd7plrbhrvba1cobh', 'udl5boqszgimeawr', 'fbgSmoTWoUhGyNK5txe2', {
     host: 'bofsd7plrbhrvba1cobh-mysql.services.clever-cloud.com',
     dialect: 'mysql',
@@ -15,9 +10,7 @@ const sequelize = new Sequelize('bofsd7plrbhrvba1cobh', 'udl5boqszgimeawr', 'fbg
         max: process.env.MYSQL_MASTER_CONNECTION_LIMIT,
         min: 1,
         acquire: 30000,
-        idle: 10000,
-        logging: false,
-        reconnect: reconnectOptions || true
+        idle: 10000
     }
 });
 const Book = BookModel(sequelize, Sequelize);
