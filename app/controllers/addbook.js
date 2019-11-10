@@ -16,7 +16,7 @@ function sendBookData(req, res) {
         status: 0,
         createdAt: Date(),
         updatedAt: Date()
-    }).then(() => res.redirect('/'))
+    }).then(() => res.redirect('/libooklist'))
         .catch((e) => {
             console.log(e)
         })
