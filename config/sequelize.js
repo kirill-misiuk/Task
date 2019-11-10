@@ -6,7 +6,7 @@ const sequelize = new Sequelize('bofsd7plrbhrvba1cobh', 'udl5boqszgimeawr', 'fbg
     dialect: 'mysql',
     port: 3306,
     pool: {
-        max: 10,
+        max: 100,
         min: 0,
         acquire: 30000,
         idle: 10000
