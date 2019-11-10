@@ -1,5 +1,5 @@
 # Intexsoft_Task
-https://library.cleverapps.io/allbooklist
+https://library.cleverapps.io
 Password to all library accounts: qwerty
 
 # ABOUT DATABASES
