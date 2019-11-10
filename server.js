@@ -23,8 +23,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-require('./js/passport')(passport);
+
 require('./app/routes/index.js')(app);
+require('./app/routes/main')(app);
+require('./js/passport')(passport);
 require('./app/routes/addbook.js')(app,passport);
 require('./app/routes/libraries')(app);
 require('./app/routes/auth.js')(app, passport);
