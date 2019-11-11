@@ -11,6 +11,7 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "forever-monitor": "^1.7.1",
     "http-errors": "^1.7.3",
     "jquery": "^3.4.1",
     "js-alert": "^1.0.4",
