@@ -7,8 +7,7 @@ let connection;
 
 function handleDisconnect() {
     connection = mysql.createConnection(dbconfig.connection);
-
-
+    connection.query('USE ' + dbconfig.database);
     connection.connect(function(err) {
         if(err) {
             console.log('error when connecting to db:', err);
@@ -26,7 +25,8 @@ function handleDisconnect() {
     });
 }
 handleDisconnect();
-connection.query('USE ' + dbconfig.database);
+
+
 module.exports = function (passport) {
 
 
