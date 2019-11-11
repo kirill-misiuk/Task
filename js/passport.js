@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt-nodejs');
 const dbconfig = require('../config/passportDB');
 
 let connection;
-
+connection = mysql.createConnection(dbconfig.connection);
+connection.query('USE ' + dbconfig.database);
 function handleDisconnect() {
     connection = mysql.createConnection(dbconfig.connection);
     connection.query('USE ' + dbconfig.database);
