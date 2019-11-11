@@ -1,5 +1,5 @@
 module.exports = {
-    'pool': {
+    'connection': {
         'host': 'bofsd7plrbhrvba1cobh-mysql.services.clever-cloud.com',
         'user': 'udl5boqszgimeawr',
         'password': 'fbgSmoTWoUhGyNK5txe2'

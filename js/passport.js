@@ -3,8 +3,8 @@ const mysql = require('mysql');
 const bcrypt = require('bcrypt-nodejs');
 const dbconfig = require('../config/passportDB');
 
-const pool = mysql.createPool(dbconfig.pool);
-pool.query('USE ' + dbconfig.database);
+const connection = mysql.createConnection(dbconfig.connection);
+connection.query('USE ' + dbconfig.database);
 
 
 module.exports = function (passport) {
@@ -17,7 +17,7 @@ module.exports = function (passport) {
 
 
     passport.deserializeUser(function (id, done) {
-        pool.query("SELECT * FROM libraries WHERE id = ? ", [id], function (err, rows) {
+        connection.query("SELECT * FROM libraries WHERE id = ? ", [id], function (err, rows) {
             done(err, rows[0]);
         });
     });
@@ -30,7 +30,7 @@ module.exports = function (passport) {
                 passReqToCallback: true
             },
             function (req, username, password, done) {
-                pool.query("SELECT * FROM libraries WHERE name = ?", [username], function (err, rows) {
+                connection.query("SELECT * FROM libraries WHERE name = ?", [username], function (err, rows) {
                     if (err)
                         return done(err);
                     if (rows.length) {
@@ -47,9 +47,9 @@ module.exports = function (passport) {
 
                         let insertQuery = "INSERT INTO libraries ( name, password, location,createdAt,updatedAt ) values (?,?,?,?,?)";
 
-                        pool.query(insertQuery, [newUserMysql.name, newUserMysql.password, newUserMysql.location, newUserMysql.createdAt, newUserMysql.updatedAt], function (err, rows) {
+                        connection.query(insertQuery, [newUserMysql.name, newUserMysql.password, newUserMysql.location, newUserMysql.createdAt, newUserMysql.updatedAt], function (err, rows) {
                             console.log(err);
-                            console.log(rows);
+                            console.log('!!!!',rows);
                             newUserMysql.id = rows.insertId;
                             return done(null, newUserMysql);
                         });
@@ -67,7 +67,7 @@ module.exports = function (passport) {
                 passReqToCallback: true
             },
             function (req, username, password, done) {
-                pool.query("SELECT * FROM libraries WHERE name = ?", [username], function (err, rows) {
+                connection.query("SELECT * FROM libraries WHERE name = ?", [username], function (err, rows) {
                     if (err)
                         return done(err);
                     if (!rows.length) {
