@@ -16,17 +16,5 @@ const sequelize = new Sequelize('database', 'username', 'password', {
         acquire: 30000,
         idle: 10000
     }
-});
-```
-Also config/passportDB.js
-```JS
-module.exports = {
-    'connection': {
-        'host': 'host',
-        'user': 'username',
-        'password': 'password'
-    },
-    'database': 'database',
-    'users_table': 'libraries'
-};
-```
+})
+'''
